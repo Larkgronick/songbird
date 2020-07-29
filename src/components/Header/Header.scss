@@ -1,0 +1,18 @@
+.cap{
+    margin: 2% 0;
+    img{
+        width: 18%;
+    }
+    span{
+        font-size: 18px;
+    }
+
+}
+
+
+.cap, .bird-types{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
