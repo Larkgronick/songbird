@@ -1,0 +1,18 @@
+.game-window{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+
+.next-button{
+    width: 100%;
+    padding: 1% 0;
+    color: white;
+    background-color: #303030;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    margin: 1% 0;
+    font-size: 14px;
+}

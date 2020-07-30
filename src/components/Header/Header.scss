@@ -4,7 +4,8 @@
         width: 18%;
     }
     span{
-        font-size: 18px;
+        font-size: 20px;
+        color: white;
     }
 
 }
@@ -16,3 +17,27 @@
     align-items: center;
 
 }
+
+.bird-types{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 8px;
+
+}
+
+
+.buttons{
+    width: 170px;
+    font-size: 15px;
+    color: white;
+    background-color: #008966;
+    margin: 1% 0.5%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+
+ 
+
+}
+

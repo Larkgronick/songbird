@@ -12,17 +12,17 @@ class Bird extends React.Component {
     render() {
       return (
          <figure className='bird-data'>
-             <img src={birdDefault} alt='bird'/>
+            <img src={birdDefault} alt='bird'/>
             <figcaption className='bird-riddle'>
                 <div>Bird name</div>
                 <hr/>
-                <AudioPlayer
+                <AudioPlayer 
+                    style={{backgroundColor: '#303030', boxShadow: 'none'}}
                     autoPlay
                     src="http://example.com/audio.mp3"
                     onPlay={e => console.log("onPlay")}
                     showJumpControls={false}
                     customAdditionalControls={[]}
-
                 />
             </figcaption>
          </figure> 

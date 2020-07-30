@@ -1,0 +1,20 @@
+.variants-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    background-color: #303030;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 18px;
+    margin: 1% 1%;
+    padding-right: 2%;
+    li{
+        padding: 1% 0;
+        color: white;
+        border: 1px solid #555555;
+        border-radius: 8px;
+        margin: 1% 0;
+        padding-left: 5% ;
+    }
+}

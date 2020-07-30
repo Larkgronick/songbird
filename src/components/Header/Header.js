@@ -17,7 +17,7 @@ class Header extends React.Component {
           <span>Score: {this.state.score}</span>
         </div>
         <div className='bird-types'>{birdTypes.map((item) => (
-              <button>
+              <button className='buttons'>
                 {item}
               </button>
             ))}

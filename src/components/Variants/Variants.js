@@ -13,11 +13,10 @@ class Variants extends React.Component {
     </li>
   ))
 }
-
-    render() {
-      return (
-        <ul>{this.randomRound()}</ul>
-      );
-    }
+  render() {
+    return (
+      <ul className='variants-block'>{this.randomRound()}</ul>
+    );
+  }
 }
 export default Variants;

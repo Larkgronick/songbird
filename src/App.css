@@ -2,6 +2,14 @@
   width: 70%;
   margin: 0 auto;
   text-align: center;
-
+ 
 }
 
+html{
+  background-color: #222222;
+}
+
+button{
+  outline: none;
+  cursor: pointer;
+}
