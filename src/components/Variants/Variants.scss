@@ -1,20 +1,37 @@
 .variants-block{
+    margin: 0;   
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 40%;
-    background-color: #303030;
-    border-radius: 8px;
     text-align: left;
     font-size: 18px;
-    margin: 1% 1%;
-    padding-right: 2%;
     li{
-        padding: 1% 0;
+        padding: 2% 0;
+        position: relative;
+        display: block;
         color: white;
+        background-color: #303030;
         border: 1px solid #555555;
-        border-radius: 8px;
-        margin: 1% 0;
-        padding-left: 5% ;
+        cursor: pointer;
+        .dot{
+            padding: 0 3%;
+        }
     }
+    li:first-child{
+        border-radius: 8px 8px 0 0;
+    }
+    li:last-child{
+        border-radius: 0 0 8px 8px;
+    }
+    li:hover{
+        background-color: #444444;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .variants-block{
+        width: 100%;
+    }
+
 }

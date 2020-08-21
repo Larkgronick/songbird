@@ -4,17 +4,37 @@ import Bird from '../Bird/Bird'
 import Variants from '../Variants/Variants';
 import Description from '../Description/Description';
 
+class Game extends React.Component {  
+    render(){ 
+        const endGame = this.props.data.endGame;
+        let show;
+        if (endGame === false) {
+            show = <GameWindow data={this.props.data} nextLevel={this.props.nextLevel}/>
+          } else {
+            show = <CongtatsWindow />;
+          }
+        return (
+            <div>{show}</div>
+          );
+    }  
+
+}
 
 class GameWindow extends React.Component{
+    
     render(){
+        
+        const birdName = this.props.data.bird;
+        const variants = this.props.data.variants;
+        const correct = this.props.data.correct
         return (
             <div>
-                <Bird/>
+                <Bird bird={birdName} correct={correct}/>
                 <div className='game-window'>
-                    <Variants/>
+                    <Variants variants={variants}/>
                     <Description />
                 </div>
-                <button className='next-button'>Next</button>
+                <button onClick={this.props.nextLevel} className='next-button'>Next</button>
             </div>
           );
     }  
@@ -34,29 +54,4 @@ class CongtatsWindow extends React.Component{
 
 }
 
-class Game extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            endGame: false
-        };
-      }
-    
-    render(){
-        const endGame = this.state.endGame
-        let show
-        if (endGame === false) {
-            show = <GameWindow />
-          } else {
-            show = <CongtatsWindow />;
-          }
-
-        return (
-            <div>{show}</div>
-          );
-    }  
-
-}
-
 export default Game;
-

@@ -23,6 +23,7 @@
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 8px;
+    background-color: #008966;
 
 }
 
@@ -32,12 +33,16 @@
     font-size: 15px;
     color: white;
     background-color: #008966;
-    margin: 1% 0.5%;
-    padding: 10px 0;
     border: none;
-    border-radius: 8px;
+    padding: 1% 0;
+    
 
  
 
+}
+
+.active{
+    background-color: #00bc8c;
+    border-radius: 8px;
 }
 

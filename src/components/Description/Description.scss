@@ -1,3 +1,9 @@
 .description{
     width: 50%;
 }
+
+@media screen and (max-width: 850px){
+    .description{
+        width: 100%;
+    }
+}
