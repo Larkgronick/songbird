@@ -14,3 +14,35 @@
     margin: 1% 0;
     font-size: 14px;
 }
+
+.congrats-window{
+    background-color: #303030;
+    border: 1px solid #555555;
+    margin: 2% 0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 400;
+    color: #fff;
+    hr{
+        height: 1px;
+        border: none;
+        background-color: #555555;
+    
+    }
+}
+
+.congrats{
+    font-size: 32px;
+}
+
+.congrats-button{
+    padding: 15px;
+    margin: 25px 0;
+    width: 80%;
+    font-size: 18px;
+    color: white;
+    background-color: #00bc8c;
+    border: none;
+    border-radius: 8px;
+
+}

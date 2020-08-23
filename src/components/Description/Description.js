@@ -3,9 +3,6 @@ import './Description.scss';
 import AudioPlayer from 'react-h5-audio-player';
 import birdDefault from '../../assets/default.png';
 
-
-
-
 class Rules extends React.Component { 
     render(){
         return (
@@ -20,23 +17,25 @@ class Rules extends React.Component {
 
 class Answer extends React.Component { 
     render(){
+        const birdName = this.props.variants[this.props.userAnswer].name;
+        const species = this.props.variants[this.props.userAnswer].species;
+        const image = this.props.variants[this.props.userAnswer].image;
+        const description = this.props.variants[this.props.userAnswer].description;
+        const audio = this.props.variants[this.props.userAnswer].audio;
         return (
             <figure className='bird-data'>
-            <img src={birdDefault} alt='bird'/>
+            <img src={image} alt='bird'/>
            <figcaption className='bird-riddle'>
-               <div>Bird name</div>
+             <div>{birdName}</div>
                <hr/>
-               <p>Latin</p>
+               <p>{species}</p>
                <AudioPlayer
                    style={{backgroundColor: '#303030', boxShadow: 'none'}}
-                   autoPlay
-                   src="http://example.com/audio.mp3"
-                   onPlay={e => console.log("onPlay")}
+                   src={audio}
                    showJumpControls={false}
                    customAdditionalControls={[]}
-
                />
-               <p>DESCRIPTION</p>
+               <p>{description}</p>
            </figcaption>
         </figure> 
         );
@@ -44,22 +43,14 @@ class Answer extends React.Component {
 
 }
 
-
-class Description extends React.Component { 
-    constructor(props) {
-        super(props);
-        this.state = {
-            startGame: true
-        };
-      }
-    
-    render() {
-        const startGame = this.state.startGame;
+class Description extends React.Component {  
+    render() {  
+        const startGame = this.props.startGame;
         let description;
         if (startGame === false) {
             description = <Rules />
           } else {
-            description = <Answer />;
+            description = <Answer variants={this.props.variants} userAnswer={this.props.userAnswer}/>;
           }
 
       return (

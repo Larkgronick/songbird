@@ -6,17 +6,16 @@ import birdDefault from '../../assets/default.png';
 
 class Bird extends React.Component {
     render(){ 
-        const correct = this.props.correct.correct;
+        const correct = this.props.correct;
         const name = this.props.bird.name;
         const image = this.props.bird.image;
         const audioURL = this.props.bird.audio;
-
         if (correct === false) {
             return  (
                <figure className='bird-data'>
-                  <img src={image} alt='bird'/>
+                  <img src={birdDefault} alt='bird'/>
                   <figcaption className='bird-riddle'>
-                      <div>{name}</div>
+                      <div>*****</div>
                       <hr/>
                       <AudioPlayer 
                           style={{backgroundColor: '#303030', boxShadow: 'none'}}
