@@ -105,7 +105,6 @@ class App extends React.Component {
   render(){
   return (
     <div className='App'>
-      <div>{this.state.answer}</div>
       <Header category={this.state.category} score={this.state.score} nextLevel = {this.nextLevel}/>
       <Game nextLevel={this.nextLevel}  checkAnswer={this.checkAnswer} resetGame={this.resetGame} data={this.state} />
     </div>
