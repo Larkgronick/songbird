@@ -17,6 +17,8 @@ class App extends React.Component {
         startGame: false,
         endGame: false,
         correct: false,
+        roundClear: false,
+        points: 5,
         category: 0,
         score: 0,
         bird: {},
@@ -33,26 +35,26 @@ class App extends React.Component {
   }
   
   createGame(category){
-    if(category < 5) {
+    if(category < 6) {
       let variants = shuffle(birdsData[category]);
       let answer = randomNumber(0,5);
       let bird = variants[answer];
       this.setState({
         bird: bird,
         answer: answer,
-        variants: variants,  
-      })
+        variants: variants,
+        roundClear: false  
+      }, ()=>console.log(this.state.answer))
   } else {
       this.setState({
         endGame: true
       })
-  }
-    
+  }   
   }
 
   resetGame(){
-    this.setState(this.baseState);
-    this.createGame(this.state.category)
+    this.setState(this.baseState, ()=>this.createGame(this.state.category));
+    
     
   }
 
@@ -62,29 +64,40 @@ class App extends React.Component {
   }
 
   nextLevel() {
-    this.setState({ 
-      category: this.state.category + 1,
-      correct: false,
-      startGame: false 
-    
-    }, () => {                              
-      this.createGame(this.state.category);
-    });
-
+    if(this.state.correct){
+      this.setState({ 
+        category: this.state.category + 1,
+        correct: false,
+        startGame: false,
+        points: 5,
+        userAnswer: 6,
+        roundClear: true
+      }, () => {                    
+        this.createGame(this.state.category);
+      });
+    }
   }
 
-  checkAnswer(answer){
-    this.setState({
+  checkAnswer(answer, e){
+     this.setState({
       startGame: true,
       userAnswer: answer
     })
     if(this.state.answer === answer){
+      e.target.firstChild.className = 'dot dot-correct';
       this.setState({
         correct: true,
         startGame: true,
+        score: this.state.score + this.state.points
       })
       return playAudio(correct);
     }else{
+      e.target.firstChild.className = 'dot dot-wrong';
+      if(this.state.points > 0){
+        this.setState({
+          points: this.state.points - 1 
+        })
+      }
       return playAudio(wrong);
     }
   }

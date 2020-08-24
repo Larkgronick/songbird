@@ -1,7 +1,6 @@
 import React from 'react';
 import './Description.scss';
 import AudioPlayer from 'react-h5-audio-player';
-import birdDefault from '../../assets/default.png';
 
 class Rules extends React.Component { 
     render(){
@@ -25,13 +24,14 @@ class Answer extends React.Component {
         return (
             <figure className='bird-data'>
             <img src={image} alt='bird'/>
-           <figcaption className='bird-riddle'>
+           <figcaption className='bird-riddle bird-description'>
              <div>{birdName}</div>
                <hr/>
                <p>{species}</p>
                <AudioPlayer
                    style={{backgroundColor: '#303030', boxShadow: 'none'}}
                    src={audio}
+                   autoPlayAfterSrcChange={false}
                    showJumpControls={false}
                    customAdditionalControls={[]}
                />

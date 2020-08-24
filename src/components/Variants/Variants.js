@@ -2,14 +2,13 @@ import React from 'react';
 import './Variants.scss';
 
 class Variants extends React.Component {
-
   createVariants(){
+    const roundClear=this.props.roundClear
     const variants = this.props.variants.map(el=>el.name);
     return variants.map((item, index) => 
-      <li onClick={() => this.props.checkAnswer(index)}><span  className='dot'>•</span>{item}</li>
+      <li onClick={(e) => {this.props.checkAnswer(index, e)}}><span key={index} className={`${roundClear ? 'dot-wrong' : 'dot'}`}>•</span>{item}</li>
       ) 
     }
-     
   render() {
     return (
       <ul  className='variants-block' >

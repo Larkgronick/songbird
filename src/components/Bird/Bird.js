@@ -19,7 +19,7 @@ class Bird extends React.Component {
                       <hr/>
                       <AudioPlayer 
                           style={{backgroundColor: '#303030', boxShadow: 'none'}}
-                          src={audioURL}
+                          src={audioURL} 
                           showJumpControls={false}
                           customAdditionalControls={[]}
                       />

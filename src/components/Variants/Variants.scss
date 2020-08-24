@@ -17,7 +17,18 @@
         .dot{
             padding: 0 3%;
         }
+        .dot-wrong{
+            padding: 0 3%;
+            color: red;
+        }
+        .dot-correct{
+            padding: 0 3%;
+            color: greenyellow;
+        }
     }
+
+ 
+
     li:first-child{
         border-radius: 8px 8px 0 0;
     }

@@ -3,6 +3,7 @@ import './Game.scss';
 import Bird from '../Bird/Bird'
 import Variants from '../Variants/Variants';
 import Description from '../Description/Description';
+import win from '../../assets/win.JPG';
 
 class Game extends React.Component {  
     render(){ 
@@ -28,14 +29,15 @@ class GameWindow extends React.Component{
         const correct = this.props.data.correct;
         const startGame = this.props.data.startGame;
         const userAnswer = this.props.data.userAnswer;
+        const roundClear = this.props.data.roundClear;
         return (
             <div>
                 <Bird bird={birdName} correct={correct}/>
                 <div className='game-window'>
-                    <Variants variants={variants} checkAnswer={this.props.checkAnswer}/>
+                    <Variants variants={variants} roundClear={roundClear} checkAnswer={this.props.checkAnswer}/>
                     <Description variants={variants} userAnswer={userAnswer} startGame={startGame} />
                 </div>
-                <button onClick={this.props.nextLevel} className='next-button'>Next</button>
+                <button onClick={this.props.nextLevel} className={`next-button ${correct ? "next-button-correct" : ""}`}>Next</button>
             </div>
           );
     }  
@@ -45,16 +47,28 @@ class GameWindow extends React.Component{
 class CongtatsWindow extends React.Component{
     render(){
         const score = this.props.score
-        return (
-            <div className='congrats-window'>
-                <p className='congrats'>Поздравляем!</p>
-                <p className='message'>Вы прошли викторину и набрали {score} из 30 возможных баллов</p>
-                <hr/>
-                <button onClick={this.props.resetGame} class='congrats-button'>Again</button>
-            </div>
-          );
+        if (score === 30) {
+            return  (
+                
+                <div className='congrats-window'>
+                    <p className='congrats'>Не может быть!</p>
+                    <p className='message'>Вы распознали все чик-чирики!</p>
+                    <img src={win} className='congrats-image' alt='suspicion' />
+                    <hr/>
+                    <button onClick={this.props.resetGame} class='congrats-button'>Again</button>
+                </div>
+              )
+          } else {
+            return (
+                <div className='congrats-window'>
+                    <p className='congrats'>Поздравляем!</p>
+                    <p className='message'>Вы прошли викторину и набрали {score} из 30 возможных баллов</p>
+                    <hr/>
+                    <button onClick={this.props.resetGame} class='congrats-button'>Again</button>
+                </div>
+              );
+          }
     }  
-
 }
 
 export default Game;
