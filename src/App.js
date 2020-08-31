@@ -54,8 +54,7 @@ class App extends React.Component {
 
   resetGame(){
     this.setState(this.baseState, ()=>this.createGame(this.state.category));
-    
-    
+     
   }
 
   componentDidMount(){
@@ -83,7 +82,9 @@ class App extends React.Component {
       startGame: true,
       userAnswer: answer
     })
-    if(this.state.answer === answer){
+    if(this.state.correct){
+      
+    } else if (this.state.answer === answer){
       e.target.firstChild.className = 'dot dot-correct';
       this.setState({
         correct: true,

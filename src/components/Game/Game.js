@@ -32,7 +32,7 @@ class GameWindow extends React.Component{
         const roundClear = this.props.data.roundClear;
         return (
             <div>
-                <Bird bird={birdName} correct={correct}/>
+                <Bird bird={birdName} correct={correct} stopPlaying={this.props.stopPlaying}/>
                 <div className='game-window'>
                     <Variants variants={variants} roundClear={roundClear} checkAnswer={this.props.checkAnswer}/>
                     <Description variants={variants} userAnswer={userAnswer} startGame={startGame} />
