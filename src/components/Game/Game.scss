@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
 .next-button{
@@ -13,10 +14,12 @@
     border-radius: 8px;
     margin: 1% 0;
     font-size: 14px;
+
 }
 
 .next-button-correct{
     background-color: #00bc8c;
+
 }
 
 .congrats-window{
@@ -33,14 +36,17 @@
         background-color: #555555;
     
     }
+    
 }
 
 .congrats{
     font-size: 32px;
+
 }
 
 .congrats-image{
     width: 300px;
+
 }
 
 .congrats-button{

@@ -44,6 +44,5 @@ class Bird extends React.Component {
              );
           }
     }  
-
 }
 export default Bird;
